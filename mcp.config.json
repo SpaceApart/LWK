@@ -1,0 +1,6 @@
+{
+    "name": "lwk-app",
+    "type": "supabase",
+    "port": 3000,
+    "start": "pnpm dev"
+  }
