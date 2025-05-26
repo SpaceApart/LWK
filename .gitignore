@@ -29,3 +29,9 @@ node_modules/
 # Task files
 tasks.json
 tasks/ 
+
+.next/
+*.hot-update.*
+*.pack.gz
+.cache/ 
+.turbo

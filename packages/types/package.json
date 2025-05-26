@@ -6,9 +6,16 @@
   "types": "src/index.ts",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "generate:types": "cd ../../apps/web && pnpm payload generate:types --output ../../packages/types/src/payload-types.ts"
+    "generate:types": "cd ../../apps/admin && pnpm payload generate:types --output ../../packages/types/src/payload-types.ts",
+    "sync:types": "node scripts/sync-types.js",
+    "build:types": "pnpm generate:types && pnpm sync:types"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
   },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "tsx": "^4.0.0",
+    "@types/node": "^22.0.0"
   }
 } 

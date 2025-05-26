@@ -138,6 +138,68 @@ export const Experiences: CollectionConfig = {
             ]
         },
         {
+            name: 'workflowStatus',
+            type: 'select',
+            options: [
+                { label: 'Draft', value: 'draft' },
+                { label: 'Pending Review', value: 'pending_review' },
+                { label: 'Published', value: 'published' },
+                { label: 'Rejected', value: 'rejected' },
+            ],
+            defaultValue: 'draft',
+            admin: {
+                position: 'sidebar',
+            },
+        },
+        {
+            name: 'workflowMetadata',
+            type: 'group',
+            label: 'Workflow Information',
+            admin: {
+                position: 'sidebar',
+                condition: (data) => data?.workflowStatus !== 'draft',
+            },
+            fields: [
+                {
+                    name: 'submittedBy',
+                    type: 'relationship',
+                    relationTo: 'users',
+                    admin: {
+                        readOnly: true,
+                    },
+                },
+                {
+                    name: 'submittedAt',
+                    type: 'date',
+                    admin: {
+                        readOnly: true,
+                    },
+                },
+                {
+                    name: 'reviewedBy',
+                    type: 'relationship',
+                    relationTo: 'users',
+                    admin: {
+                        readOnly: true,
+                    },
+                },
+                {
+                    name: 'reviewedAt',
+                    type: 'date',
+                    admin: {
+                        readOnly: true,
+                    },
+                },
+                {
+                    name: 'rejectionReason',
+                    type: 'textarea',
+                    admin: {
+                        condition: (data) => data?.workflowStatus === 'rejected',
+                    },
+                },
+            ],
+        },
+        {
             name: 'images',
             type: 'array',
             label: 'Images',
