@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS=\"--inspect\" next dev --port 3000",
+    "dev": "cross-env NODE_OPTIONS=\"--inspect\" next dev --port 3001",
     "devturbo": "pnpm dev --turbo",
     "devsafe": "rm -rf .next && pnpm dev",
     "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" next build",
-    "start": "cross-env NODE_OPTIONS=\"--inspect\" next start --port 3000",
+    "start": "cross-env NODE_OPTIONS=\"--inspect\" next start --port 3001",
     "lint": "cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" next lint",
     "lint:fix": "pnpm lint --fix",
     "clean": "rm -rf .next && rm -rf node_modules",

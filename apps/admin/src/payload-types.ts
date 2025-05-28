@@ -72,6 +72,7 @@ export interface Config {
     media: Media;
     categories: Category;
     users: User;
+    'dashboard-users': DashboardUser;
     offers: Offer;
     attractions: Attraction;
     experiences: Experience;
@@ -93,6 +94,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    'dashboard-users': DashboardUsersSelect<false> | DashboardUsersSelect<true>;
     offers: OffersSelect<false> | OffersSelect<true>;
     attractions: AttractionsSelect<false> | AttractionsSelect<true>;
     experiences: ExperiencesSelect<false> | ExperiencesSelect<true>;
@@ -658,6 +660,54 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dashboard-users".
+ */
+export interface DashboardUser {
+  id: number;
+  /**
+   * Unique identifier from Clerk authentication system
+   */
+  clerkId: string;
+  /**
+   * User email address from Clerk
+   */
+  email: string;
+  /**
+   * User first name from Clerk
+   */
+  firstName?: string | null;
+  /**
+   * User last name from Clerk
+   */
+  lastName?: string | null;
+  /**
+   * Profile image URL from Clerk
+   */
+  imageUrl?: string | null;
+  /**
+   * Username from Clerk (if available)
+   */
+  username?: string | null;
+  /**
+   * Last sign in timestamp from Clerk
+   */
+  lastSignInAt?: string | null;
+  /**
+   * Account creation timestamp from Clerk
+   */
+  createdAt: string;
+  /**
+   * Whether the user is banned from Clerk
+   */
+  banned?: boolean | null;
+  /**
+   * Whether the user account is locked in Clerk
+   */
+  locked?: boolean | null;
+  updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "offers".
  */
 export interface Offer {
@@ -954,6 +1004,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'dashboard-users';
+        value: number | DashboardUser;
       } | null)
     | ({
         relationTo: 'offers';
@@ -1255,6 +1309,23 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "dashboard-users_select".
+ */
+export interface DashboardUsersSelect<T extends boolean = true> {
+  clerkId?: T;
+  email?: T;
+  firstName?: T;
+  lastName?: T;
+  imageUrl?: T;
+  username?: T;
+  lastSignInAt?: T;
+  createdAt?: T;
+  banned?: T;
+  locked?: T;
+  updatedAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

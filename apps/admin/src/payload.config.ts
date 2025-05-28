@@ -25,6 +25,7 @@ import { searchFields } from '@/search/fieldOverrides';
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types';
 import { Attractions } from './collections/Attractions';
 import Categories from './collections/Categories';
+import DashboardUsers from './collections/DashboardUsers';
 import { Experiences } from './collections/Experiences';
 import { Locations } from './collections/Locations';
 import { Media } from './collections/Media';
@@ -135,7 +136,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users, Offers, Attractions, Experiences, Photos, Tags, Locations],
+  collections: [Pages, Posts, Media, Categories, Users, DashboardUsers, Offers, Attractions, Experiences, Photos, Tags, Locations],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   endpoints: [
