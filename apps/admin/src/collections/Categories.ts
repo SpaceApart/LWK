@@ -13,6 +13,7 @@ const Categories: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
+    group: 'Content',
   },
   fields: [
     {

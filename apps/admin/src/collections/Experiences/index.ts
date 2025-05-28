@@ -7,6 +7,7 @@ export const Experiences: CollectionConfig = {
     admin: {
         useAsTitle: 'title',
         defaultColumns: ['title', 'slug', 'status', 'updatedAt'],
+        group: 'Tourism',
     },
     access: {
         create: authenticated,

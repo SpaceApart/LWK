@@ -83,12 +83,12 @@ export function HomeContent() {
                 </p>
               )}
               <div className="mt-4 pt-4 border-t border-gray-200">
-                <a
+                <Link
                   href={`/${page.slug}`}
                   className="text-blue-600 hover:text-blue-800 font-medium text-sm"
                 >
                   Zobacz stronę →
-                </a>
+                </Link>
               </div>
             </div>
           ))}

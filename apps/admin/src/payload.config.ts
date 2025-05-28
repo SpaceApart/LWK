@@ -23,7 +23,6 @@ import { fileURLToPath } from 'url';
 import { beforeSyncWithSearch } from '@/search/beforeSync';
 import { searchFields } from '@/search/fieldOverrides';
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types';
-import { Page, Post } from 'src/payload-types';
 import { Attractions } from './collections/Attractions';
 import Categories from './collections/Categories';
 import { Experiences } from './collections/Experiences';
@@ -40,6 +39,7 @@ import { Footer } from './globals/Footer/config';
 import { Header } from './globals/Header/config';
 import { revalidateRedirects } from './hooks/revalidateRedirects';
 import localization from './i18n/localization';
+import { Page, Post } from './payload-types';
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -60,12 +60,15 @@ export default buildConfig({
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeLogin` statement on line 15.
       beforeLogin: ['@/components/BeforeLogin'],
-      afterDashboard: ['@/components/AfterDashboard'],
+      afterDashboard: ['@/components/AfterDashboard', '@/components/NavigationStateManager'],
     },
     importMap: {
       baseDir: path.resolve(dirname),
     },
     user: Users.slug,
+    meta: {
+      titleSuffix: '- LWK Admin',
+    },
     livePreview: {
       breakpoints: [
         {
@@ -149,6 +152,9 @@ export default buildConfig({
     redirectsPlugin({
       collections: ['pages', 'posts'],
       overrides: {
+        admin: {
+          group: 'System',
+        },
         // @ts-expect-error
         fields: ({ defaultFields }) => {
           return defaultFields.map((field) => {
@@ -180,6 +186,9 @@ export default buildConfig({
         payment: false,
       },
       formOverrides: {
+        admin: {
+          group: 'Content',
+        },
         fields: ({ defaultFields }) => {
           return defaultFields.map((field) => {
             if ('name' in field && field.name === 'confirmationMessage') {
@@ -200,11 +209,19 @@ export default buildConfig({
           })
         },
       },
+      formSubmissionOverrides: {
+        admin: {
+          group: 'Content',
+        },
+      },
     }),
     searchPlugin({
       collections: ['posts'],
       beforeSync: beforeSyncWithSearch,
       searchOverrides: {
+        admin: {
+          group: 'System',
+        },
         fields: ({ defaultFields }) => {
           return [...defaultFields, ...searchFields]
         },

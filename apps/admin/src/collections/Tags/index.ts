@@ -6,6 +6,7 @@ export const Tags: CollectionConfig = {
     admin: {
         useAsTitle: 'label',
         defaultColumns: ['label', 'slug', 'updatedAt'],
+        group: 'Tourism',
     },
     access: {
         create: authenticated,

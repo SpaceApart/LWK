@@ -8,6 +8,7 @@ export const Locations: CollectionConfig = {
     admin: {
         useAsTitle: 'name',
         defaultColumns: ['name', 'slug', 'updatedAt'],
+        group: 'Tourism',
     },
     access: {
         create: authenticated,

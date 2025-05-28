@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export function Header() {
   return (
     <header className="bg-white shadow-sm border-b">
@@ -10,24 +12,24 @@ export function Header() {
           </div>
           
           <nav className="hidden md:flex space-x-8">
-            <a
+            <Link
               href="/"
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
               Strona główna
-            </a>
-            <a
+            </Link>
+            <Link
               href="/pages"
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
               Strony
-            </a>
-            <a
+            </Link>
+            <Link
               href="/posts"
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
               Blog
-            </a>
+            </Link>
           </nav>
           
           <div className="flex items-center space-x-4">

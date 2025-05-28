@@ -1,6 +1,12 @@
 const redirects = async () => {
   return [
     {
+      // Przekierowanie z głównej strony na admin panel
+      source: '/',
+      destination: '/admin',
+      permanent: false,
+    },
+    {
       // internet explorer
       destination: '/ie-incompatible.html',
       has: [

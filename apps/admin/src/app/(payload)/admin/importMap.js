@@ -20,6 +20,7 @@ import { default as default_983ff08b80cd528182373a2fccb67bdf } from '@/component
 import { LinkToDoc as LinkToDoc_aead06e4cbf6b2620c5c51c9ab283634 } from '@payloadcms/plugin-search/client'
 import { ReindexButton as ReindexButton_aead06e4cbf6b2620c5c51c9ab283634 } from '@payloadcms/plugin-search/client'
 import { default as default_035a063f0e4325a280e3cc815d2ec5d7 } from '@/components/AfterDashboard'
+import { default as default_c78d9a934b75e10553ca802a0c0ba90c } from '@/components/NavigationStateManager'
 import { default as default_8a7ab0eb7ab5c511aba12e68480bfe5e } from '@/components/BeforeLogin'
 
 export const importMap = {
@@ -45,5 +46,6 @@ export const importMap = {
   "@payloadcms/plugin-search/client#LinkToDoc": LinkToDoc_aead06e4cbf6b2620c5c51c9ab283634,
   "@payloadcms/plugin-search/client#ReindexButton": ReindexButton_aead06e4cbf6b2620c5c51c9ab283634,
   "@/components/AfterDashboard#default": default_035a063f0e4325a280e3cc815d2ec5d7,
+  "@/components/NavigationStateManager#default": default_c78d9a934b75e10553ca802a0c0ba90c,
   "@/components/BeforeLogin#default": default_8a7ab0eb7ab5c511aba12e68480bfe5e
 }

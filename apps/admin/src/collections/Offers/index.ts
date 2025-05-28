@@ -7,6 +7,7 @@ export const Offers: CollectionConfig = {
     admin: {
         useAsTitle: 'title',
         defaultColumns: ['title', 'slug', 'status', 'updatedAt'],
+        group: 'Tourism',
     },
     access: {
         create: authenticated,
@@ -108,7 +109,7 @@ export const Offers: CollectionConfig = {
             }
         },
         {
-            name: 'rating_avg',
+            name: 'rating_avg', 
             type: 'number',
             label: 'Average Rating (Calculated or Manual)',
             required: false,

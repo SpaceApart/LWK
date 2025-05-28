@@ -1,5 +1,6 @@
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import Link from 'next/link'
 
 export default function NotFound() {
   return (
@@ -16,18 +17,18 @@ export default function NotFound() {
             Przepraszamy, nie możemy znaleźć strony, której szukasz.
           </p>
           <div className="space-x-4">
-            <a
+            <Link
               href="/"
               className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               Wróć do strony głównej
-            </a>
-            <a
+            </Link>
+            <Link
               href="/pages"
               className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors"
             >
               Zobacz wszystkie strony
-            </a>
+            </Link>
           </div>
         </div>
       </main>

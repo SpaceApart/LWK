@@ -4,11 +4,12 @@ import { fetchPageBySlug } from '@/lib/payload-api'
 import { notFound } from 'next/navigation'
 
 interface PageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export default async function DynamicPage({ params }: PageProps) {
-  const page = await fetchPageBySlug(params.slug)
+  const { slug } = await params
+  const page = await fetchPageBySlug(slug)
 
   if (!page) {
     notFound()

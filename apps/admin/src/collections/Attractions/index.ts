@@ -7,6 +7,7 @@ export const Attractions: CollectionConfig = {
     admin: {
         useAsTitle: 'title',
         defaultColumns: ['title', 'slug', 'status', 'updatedAt'],
+        group: 'Tourism',
     },
     access: {
         create: authenticated,
@@ -71,9 +72,9 @@ export const Attractions: CollectionConfig = {
                 components: {
                     Field: '@/components/LocationPicker/LocationPicker',
                 },
-            } 
+            }
         },
-        { 
+        {
             name: 'images',
             type: 'array',
             label: 'Images',

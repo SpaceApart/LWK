@@ -817,6 +817,14 @@ export interface Experience {
     email?: string | null;
     website?: string | null;
   };
+  workflowStatus?: ('draft' | 'pending_review' | 'published' | 'rejected') | null;
+  workflowMetadata?: {
+    submittedBy?: (number | null) | User;
+    submittedAt?: string | null;
+    reviewedBy?: (number | null) | User;
+    reviewedAt?: string | null;
+    rejectionReason?: string | null;
+  };
   images?:
     | {
         image: number | Media;
@@ -1331,6 +1339,16 @@ export interface ExperiencesSelect<T extends boolean = true> {
         phone?: T;
         email?: T;
         website?: T;
+      };
+  workflowStatus?: T;
+  workflowMetadata?:
+    | T
+    | {
+        submittedBy?: T;
+        submittedAt?: T;
+        reviewedBy?: T;
+        reviewedAt?: T;
+        rejectionReason?: T;
       };
   images?:
     | T
