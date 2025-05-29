@@ -14,6 +14,10 @@ const localization = {
       code: 'de',
       label: 'German (Deutsch)',
     },
+    {
+      code: 'es',
+      label: 'Español (Spanish)',
+    },
     
   ],
 }

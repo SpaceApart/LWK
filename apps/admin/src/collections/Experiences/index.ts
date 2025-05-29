@@ -89,7 +89,7 @@ export const Experiences: CollectionConfig = {
                             label: 'Start Date',
                             required: true,
                             admin: {
-                                datePicker: {
+                                date: {
                                     displayFormat: 'yyyy-MM-dd',
                                 }
                             }
@@ -100,7 +100,7 @@ export const Experiences: CollectionConfig = {
                             label: 'End Date',
                             required: true,
                             admin: {
-                                datePicker: {
+                                date: {
                                     displayFormat: 'yyyy-MM-dd',
                                 }
                             }

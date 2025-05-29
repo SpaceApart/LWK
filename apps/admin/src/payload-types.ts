@@ -120,7 +120,7 @@ export interface Config {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
   };
-  locale: 'pl' | 'en' | 'de';
+  locale: 'pl' | 'en' | 'de' | 'es';
   user: User & {
     collection: 'users';
   };

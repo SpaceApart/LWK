@@ -1,3 +1,5 @@
+"use client";
+
 import { UserProfile } from '@clerk/nextjs';
 import { useRef } from 'react';
 import SyncStatus, { SyncStatusRef } from './sync-status';

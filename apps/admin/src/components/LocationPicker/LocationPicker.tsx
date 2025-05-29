@@ -1,15 +1,23 @@
 "use client";
 import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import React, { useEffect, useRef, useState } from 'react';
+
+interface MapboxSuggestion {
+  place_name: string;
+  geometry: {
+    coordinates: [number, number];
+  };
+}
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!;
 
 const LocationPicker = ({ value, path, onChange }) => {
-  const mapContainer = useRef(null);
-  const markerRef = useRef(null);
-  const [map, setMap] = useState(null);
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const markerRef = useRef<mapboxgl.Marker | null>(null);
+  const [map, setMap] = useState<mapboxgl.Map | null>(null);
   const [query, setQuery] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState<MapboxSuggestion[]>([]);
 
   useEffect(() => {
     if (value && value.length === 2 && map) {

@@ -54,7 +54,7 @@ export default function TestLogsPage() {
           </Button>
           <div className="text-sm text-muted-foreground">
             <p>Kliknij przyciski powyżej, aby wygenerować różne typy logów konsoli.</p>
-            <p>Sprawdź przycisk "Pokaż logi konsoli" w prawym dolnym rogu strony.</p>
+            <p>Sprawdź przycisk &quot;Pokaż logi konsoli&quot; w prawym dolnym rogu strony.</p>
           </div>
         </CardContent>
       </Card>

@@ -602,6 +602,7 @@ export const post1_es: Partial<Post> = {
   meta: {
     description:
       'Sumérgete en las maravillas de la innovación moderna, donde la única constante es el cambio.',
+    // @ts-ignore
     image: '{{IMAGE_1}}',
     title: 'Horizontes Digitales: Un Vistazo al Mañana',
   },
